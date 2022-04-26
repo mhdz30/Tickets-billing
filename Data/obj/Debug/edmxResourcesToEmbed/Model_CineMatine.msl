@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CineMatinee001ModelStoreContainer" CdmEntityContainer="CineMatinee001Entities">
+    <EntitySetMapping Name="Cartelera">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Cartelera">
+        <MappingFragment StoreEntitySet="Cartelera">
+          <ScalarProperty Name="Id_Pelicula" ColumnName="Id_Pelicula" />
+          <ScalarProperty Name="Nombre_pelicula" ColumnName="Nombre_pelicula" />
+          <ScalarProperty Name="Descripcion_peli" ColumnName="Descripcion_peli" />
+          <ScalarProperty Name="fechaDispIni" ColumnName="fechaDispIni" />
+          <ScalarProperty Name="fechaDispFin" ColumnName="fechaDispFin" />
+          <ScalarProperty Name="PrecioUnit_Taq" ColumnName="PrecioUnit_Taq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cuadre">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Cuadre">
+        <MappingFragment StoreEntitySet="Cuadre">
+          <ScalarProperty Name="Id_cuadre" ColumnName="Id_cuadre" />
+          <ScalarProperty Name="fehca_cuadre" ColumnName="fehca_cuadre" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="Id_factura" ColumnName="Id_factura" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Total_general" ColumnName="Total_general" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="Id_empleado" ColumnName="Id_empleado" />
+          <ScalarProperty Name="Nombre_emp" ColumnName="Nombre_emp" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Id_sexo" ColumnName="Id_sexo" />
+          <ScalarProperty Name="fecha_nac" ColumnName="fecha_nac" />
+          <ScalarProperty Name="Id_horario" ColumnName="Id_horario" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="fecha_salida" ColumnName="fecha_salida" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Factura">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Factura">
+        <MappingFragment StoreEntitySet="Factura">
+          <ScalarProperty Name="No_fact" ColumnName="No_fact" />
+          <ScalarProperty Name="Nom_pelicula" ColumnName="Nom_pelicula" />
+          <ScalarProperty Name="Cantidad_taq" ColumnName="Cantidad_taq" />
+          <ScalarProperty Name="sala" ColumnName="sala" />
+          <ScalarProperty Name="precio_unitario" ColumnName="precio_unitario" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturacion">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Facturacion">
+        <MappingFragment StoreEntitySet="Facturacion">
+          <ScalarProperty Name="No_fact" ColumnName="No_fact" />
+          <ScalarProperty Name="fecha_fact" ColumnName="fecha_fact" />
+          <ScalarProperty Name="Id_pelicula" ColumnName="Id_pelicula" />
+          <ScalarProperty Name="Id_sala" ColumnName="Id_sala" />
+          <ScalarProperty Name="Cant_Taq" ColumnName="Cant_Taq" />
+          <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Id_funcion" ColumnName="Id_funcion" />
+          <ScalarProperty Name="Fecha_valida" ColumnName="Fecha_valida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Funcion">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Funcion">
+        <MappingFragment StoreEntitySet="Funcion">
+          <ScalarProperty Name="Id_funcion" ColumnName="Id_funcion" />
+          <ScalarProperty Name="descrip_fun" ColumnName="descrip_fun" />
+          <ScalarProperty Name="HoraIni" ColumnName="HoraIni" />
+          <ScalarProperty Name="HoraFin" ColumnName="HoraFin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horario_empleado">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Horario_empleado">
+        <MappingFragment StoreEntitySet="Horario_empleado">
+          <ScalarProperty Name="Id_horario" ColumnName="Id_horario" />
+          <ScalarProperty Name="HorarioIni" ColumnName="HorarioIni" />
+          <ScalarProperty Name="Horariofin" ColumnName="Horariofin" />
+          <ScalarProperty Name="Descripcion_horario" ColumnName="Descripcion_horario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registro_FxP">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Registro_FxP">
+        <MappingFragment StoreEntitySet="Registro_FxP">
+          <ScalarProperty Name="Id_Reg_FxP" ColumnName="Id_Reg_FxP" />
+          <ScalarProperty Name="Id_funcion" ColumnName="Id_funcion" />
+          <ScalarProperty Name="Id_pelicula" ColumnName="Id_pelicula" />
+          <ScalarProperty Name="Id_sala" ColumnName="Id_sala" />
+          <ScalarProperty Name="Precio_unit" ColumnName="Precio_unit" />
+          <ScalarProperty Name="fecha_valida" ColumnName="fecha_valida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sala">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Sala">
+        <MappingFragment StoreEntitySet="Sala">
+          <ScalarProperty Name="Id_sala" ColumnName="Id_sala" />
+          <ScalarProperty Name="Descripcion_sala" ColumnName="Descripcion_sala" />
+          <ScalarProperty Name="Capacidad_max" ColumnName="Capacidad_max" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sexo">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Sexo">
+        <MappingFragment StoreEntitySet="Sexo">
+          <ScalarProperty Name="Id_sexo" ColumnName="Id_sexo" />
+          <ScalarProperty Name="descrip_sexo" ColumnName="descrip_sexo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="CineMatinee001Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
+          <ScalarProperty Name="Usuario_idnom" ColumnName="Usuario_idnom" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="Tipo_usuario" ColumnName="Tipo_usuario" />
+          <ScalarProperty Name="Id_empleado" ColumnName="Id_empleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

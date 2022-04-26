@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CineMatinee001ModelStoreContainer" CdmEntityContainer="CineMatinee001Entities4">
+    <EntitySetMapping Name="Cartelera">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Cartelera">
+        <MappingFragment StoreEntitySet="Cartelera">
+          <ScalarProperty Name="NoReg_Cartelera" ColumnName="NoReg_Cartelera" />
+          <ScalarProperty Name="Fechareg" ColumnName="Fechareg" />
+          <ScalarProperty Name="Id_funcion" ColumnName="Id_funcion" />
+          <ScalarProperty Name="Id_sala" ColumnName="Id_sala" />
+          <ScalarProperty Name="descripcion_pelicula" ColumnName="descripcion_pelicula" />
+          <ScalarProperty Name="FechaDispIni" ColumnName="FechaDispIni" />
+          <ScalarProperty Name="FechaDispFin" ColumnName="FechaDispFin" />
+          <ScalarProperty Name="precio_unit" ColumnName="precio_unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cuadre">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Cuadre">
+        <MappingFragment StoreEntitySet="Cuadre">
+          <ScalarProperty Name="Id_cuadre" ColumnName="Id_cuadre" />
+          <ScalarProperty Name="fehca_cuadre" ColumnName="fehca_cuadre" />
+          <ScalarProperty Name="user" ColumnName="user" />
+          <ScalarProperty Name="Id_factura" ColumnName="Id_factura" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Total_general" ColumnName="Total_general" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="Id_empleado" ColumnName="Id_empleado" />
+          <ScalarProperty Name="Nombre_emp" ColumnName="Nombre_emp" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Id_sexo" ColumnName="Id_sexo" />
+          <ScalarProperty Name="fecha_nac" ColumnName="fecha_nac" />
+          <ScalarProperty Name="Id_horario" ColumnName="Id_horario" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="fecha_salida" ColumnName="fecha_salida" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado_">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Empleado_">
+        <MappingFragment StoreEntitySet="Empleado_">
+          <ScalarProperty Name="Id_emp" ColumnName="Id_emp" />
+          <ScalarProperty Name="Nombre_emp" ColumnName="Nombre_emp" />
+          <ScalarProperty Name="Apellidos_emp" ColumnName="Apellidos_emp" />
+          <ScalarProperty Name="fecha_nac" ColumnName="fecha_nac" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Factura">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Factura">
+        <MappingFragment StoreEntitySet="Factura">
+          <ScalarProperty Name="No_fact" ColumnName="No_fact" />
+          <ScalarProperty Name="Nom_pelicula" ColumnName="Nom_pelicula" />
+          <ScalarProperty Name="Cantidad_taq" ColumnName="Cantidad_taq" />
+          <ScalarProperty Name="sala" ColumnName="sala" />
+          <ScalarProperty Name="precio_unitario" ColumnName="precio_unitario" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturacion">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Facturacion">
+        <MappingFragment StoreEntitySet="Facturacion">
+          <ScalarProperty Name="No_factura" ColumnName="No_factura" />
+          <ScalarProperty Name="fecha_fact" ColumnName="fecha_fact" />
+          <ScalarProperty Name="fecha_valida" ColumnName="fecha_valida" />
+          <ScalarProperty Name="Fun" ColumnName="Fun" />
+          <ScalarProperty Name="Descripcion_pelicula" ColumnName="Descripcion_pelicula" />
+          <ScalarProperty Name="Sala" ColumnName="Sala" />
+          <ScalarProperty Name="precio_unit" ColumnName="precio_unit" />
+          <ScalarProperty Name="cantidad_taq" ColumnName="cantidad_taq" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="cant_ac" ColumnName="cant_ac" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Funcion">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Funcion">
+        <MappingFragment StoreEntitySet="Funcion">
+          <ScalarProperty Name="Id_funcion" ColumnName="Id_funcion" />
+          <ScalarProperty Name="descrip_fun" ColumnName="descrip_fun" />
+          <ScalarProperty Name="HoraIni" ColumnName="HoraIni" />
+          <ScalarProperty Name="HoraFin" ColumnName="HoraFin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horario_empleado">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Horario_empleado">
+        <MappingFragment StoreEntitySet="Horario_empleado">
+          <ScalarProperty Name="Id_horario" ColumnName="Id_horario" />
+          <ScalarProperty Name="HorarioIni" ColumnName="HorarioIni" />
+          <ScalarProperty Name="Horariofin" ColumnName="Horariofin" />
+          <ScalarProperty Name="Descripcion_horario" ColumnName="Descripcion_horario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nomina_rrhh">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Nomina_rrhh">
+        <MappingFragment StoreEntitySet="Nomina_rrhh">
+          <ScalarProperty Name="Id_nomina" ColumnName="Id_nomina" />
+          <ScalarProperty Name="fecha_nomina" ColumnName="fecha_nomina" />
+          <ScalarProperty Name="Nombre_emp" ColumnName="Nombre_emp" />
+          <ScalarProperty Name="Nombre_apellidos" ColumnName="Nombre_apellidos" />
+          <ScalarProperty Name="sueldo_bruto" ColumnName="sueldo_bruto" />
+          <ScalarProperty Name="afp" ColumnName="afp" />
+          <ScalarProperty Name="ars" ColumnName="ars" />
+          <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+          <ScalarProperty Name="total_des" ColumnName="total_des" />
+          <ScalarProperty Name="sueldo_neto" ColumnName="sueldo_neto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sexo">
+      <EntityTypeMapping TypeName="CineMatinee001Model.Sexo">
+        <MappingFragment StoreEntitySet="Sexo">
+          <ScalarProperty Name="Id_sexo" ColumnName="Id_sexo" />
+          <ScalarProperty Name="descrip_sexo" ColumnName="descrip_sexo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="CineMatinee001Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
+          <ScalarProperty Name="Usuario_idnom" ColumnName="Usuario_idnom" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="Tipo_usuario" ColumnName="Tipo_usuario" />
+          <ScalarProperty Name="Id_empleado" ColumnName="Id_empleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ERegCartelera" FunctionName="CineMatinee001Model.Store.ERegCartelera" />
+    <FunctionImportMapping FunctionImportName="IRegCartelera" FunctionName="CineMatinee001Model.Store.IRegCartelera" />
+    <FunctionImportMapping FunctionImportName="RegFact" FunctionName="CineMatinee001Model.Store.RegFact" />
+    <FunctionImportMapping FunctionImportName="ShowCartelera" FunctionName="CineMatinee001Model.Store.ShowCartelera">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CineMatinee001Model.ShowCartelera_Result">
+          <ScalarProperty Name="NoReg_Cartelera" ColumnName="NoReg_Cartelera" />
+          <ScalarProperty Name="Fechareg" ColumnName="Fechareg" />
+          <ScalarProperty Name="Id_funcion" ColumnName="Id_funcion" />
+          <ScalarProperty Name="Id_sala" ColumnName="Id_sala" />
+          <ScalarProperty Name="descripcion_pelicula" ColumnName="descripcion_pelicula" />
+          <ScalarProperty Name="FechaDispIni" ColumnName="FechaDispIni" />
+          <ScalarProperty Name="FechaDispFin" ColumnName="FechaDispFin" />
+          <ScalarProperty Name="precio_unit" ColumnName="precio_unit" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ShowCarteleraxFun" FunctionName="CineMatinee001Model.Store.ShowCarteleraxFun">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CineMatinee001Model.ShowCarteleraxFun_Result">
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+          <ScalarProperty Name="Funcion" ColumnName="Funcion" />
+          <ScalarProperty Name="Sala" ColumnName="Sala" />
+          <ScalarProperty Name="Pelicula" ColumnName="Pelicula" />
+          <ScalarProperty Name="Desde" ColumnName="Desde" />
+          <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+          <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Showempleado" FunctionName="CineMatinee001Model.Store.Showempleado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CineMatinee001Model.Showempleado_Result">
+          <ScalarProperty Name="Id_emp" ColumnName="Id_emp" />
+          <ScalarProperty Name="Nombre_emp" ColumnName="Nombre_emp" />
+          <ScalarProperty Name="Apellidos_emp" ColumnName="Apellidos_emp" />
+          <ScalarProperty Name="fecha_nac" ColumnName="fecha_nac" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ShoweNom" FunctionName="CineMatinee001Model.Store.ShoweNom">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CineMatinee001Model.ShoweNom_Result">
+          <ScalarProperty Name="Id_nomina" ColumnName="Id_nomina" />
+          <ScalarProperty Name="fecha_nomina" ColumnName="fecha_nomina" />
+          <ScalarProperty Name="Nombre_emp" ColumnName="Nombre_emp" />
+          <ScalarProperty Name="Nombre_apellidos" ColumnName="Nombre_apellidos" />
+          <ScalarProperty Name="sueldo_bruto" ColumnName="sueldo_bruto" />
+          <ScalarProperty Name="afp" ColumnName="afp" />
+          <ScalarProperty Name="ars" ColumnName="ars" />
+          <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+          <ScalarProperty Name="total_des" ColumnName="total_des" />
+          <ScalarProperty Name="sueldo_neto" ColumnName="sueldo_neto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ShowFun" FunctionName="CineMatinee001Model.Store.ShowFun">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CineMatinee001Model.ShowFun_Result">
+          <ScalarProperty Name="Id_funcion" ColumnName="Id_funcion" />
+          <ScalarProperty Name="descrip_fun" ColumnName="descrip_fun" />
+          <ScalarProperty Name="HoraIni" ColumnName="HoraIni" />
+          <ScalarProperty Name="HoraFin" ColumnName="HoraFin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ShowSala" FunctionName="CineMatinee001Model.Store.ShowSala">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CineMatinee001Model.ShowSala_Result">
+          <ScalarProperty Name="Id_sala" ColumnName="Id_sala" />
+          <ScalarProperty Name="Descripcion_sala" ColumnName="Descripcion_sala" />
+          <ScalarProperty Name="cap_max" ColumnName="cap_max" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ShowTickets" FunctionName="CineMatinee001Model.Store.ShowTickets">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CineMatinee001Model.ShowTickets_Result">
+          <ScalarProperty Name="No_fact" ColumnName="No_fact" />
+          <ScalarProperty Name="Nom_pelicula" ColumnName="Nom_pelicula" />
+          <ScalarProperty Name="Cantidad_taq" ColumnName="Cantidad_taq" />
+          <ScalarProperty Name="sala" ColumnName="sala" />
+          <ScalarProperty Name="precio_unitario" ColumnName="precio_unitario" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

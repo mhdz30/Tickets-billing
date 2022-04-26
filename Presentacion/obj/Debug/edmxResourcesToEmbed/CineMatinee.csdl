@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CineMatinee001Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Cartelera">
+    <Key>
+      <PropertyRef Name="NoReg_Cartelera" />
+    </Key>
+    <Property Name="NoReg_Cartelera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fechareg" Type="DateTime" Precision="0" />
+    <Property Name="Id_funcion" Type="Int32" />
+    <Property Name="Id_sala" Type="Int32" />
+    <Property Name="descripcion_pelicula" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FechaDispIni" Type="DateTime" Precision="0" />
+    <Property Name="FechaDispFin" Type="DateTime" Precision="0" />
+    <Property Name="precio_unit" Type="Double" />
+  </EntityType>
+  <EntityType Name="Cuadre">
+    <Key>
+      <PropertyRef Name="Id_cuadre" />
+    </Key>
+    <Property Name="Id_cuadre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fehca_cuadre" Type="DateTime" Precision="0" />
+    <Property Name="user" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Id_factura" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Double" />
+    <Property Name="Total_general" Type="Double" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="Id_empleado" />
+    </Key>
+    <Property Name="Id_empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_emp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id_sexo" Type="Int32" Nullable="false" />
+    <Property Name="fecha_nac" Type="DateTime" Precision="0" />
+    <Property Name="Id_horario" Type="Int32" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="DateTime" Precision="0" />
+    <Property Name="fecha_salida" Type="DateTime" Precision="0" />
+    <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Empleado_">
+    <Key>
+      <PropertyRef Name="Id_emp" />
+    </Key>
+    <Property Name="Id_emp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_emp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Apellidos_emp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fecha_nac" Type="DateTime" Precision="0" />
+    <Property Name="Sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Telefono" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="No_fact" />
+    </Key>
+    <Property Name="No_fact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom_pelicula" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cantidad_taq" Type="Int32" />
+    <Property Name="sala" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="precio_unitario" Type="Double" />
+    <Property Name="total" Type="Double" />
+  </EntityType>
+  <EntityType Name="Facturacion">
+    <Key>
+      <PropertyRef Name="No_factura" />
+    </Key>
+    <Property Name="No_factura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha_fact" Type="DateTime" Precision="0" />
+    <Property Name="fecha_valida" Type="DateTime" Precision="0" />
+    <Property Name="Fun" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Descripcion_pelicula" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sala" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="precio_unit" Type="Double" />
+    <Property Name="cantidad_taq" Type="Int32" />
+    <Property Name="total" Type="Double" />
+    <Property Name="cant_ac" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Funcion">
+    <Key>
+      <PropertyRef Name="Id_funcion" />
+    </Key>
+    <Property Name="Id_funcion" Type="Int32" Nullable="false" />
+    <Property Name="descrip_fun" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HoraIni" Type="Time" Precision="7" />
+    <Property Name="HoraFin" Type="Time" Precision="7" />
+  </EntityType>
+  <EntityType Name="Horario_empleado">
+    <Key>
+      <PropertyRef Name="Id_horario" />
+    </Key>
+    <Property Name="Id_horario" Type="Int32" Nullable="false" />
+    <Property Name="HorarioIni" Type="Time" Precision="7" />
+    <Property Name="Horariofin" Type="Time" Precision="7" />
+    <Property Name="Descripcion_horario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Nomina_rrhh">
+    <Key>
+      <PropertyRef Name="Id_nomina" />
+    </Key>
+    <Property Name="Id_nomina" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha_nomina" Type="DateTime" Precision="0" />
+    <Property Name="Nombre_emp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre_apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sueldo_bruto" Type="Double" />
+    <Property Name="afp" Type="Double" />
+    <Property Name="ars" Type="Double" />
+    <Property Name="Impuesto" Type="Double" />
+    <Property Name="total_des" Type="Double" />
+    <Property Name="sueldo_neto" Type="Double" />
+  </EntityType>
+  <EntityType Name="Sexo">
+    <Key>
+      <PropertyRef Name="Id_sexo" />
+    </Key>
+    <Property Name="Id_sexo" Type="Int32" Nullable="false" />
+    <Property Name="descrip_sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id_usuario" />
+    </Key>
+    <Property Name="Id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario_idnom" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tipo_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id_empleado" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CineMatinee001Entities4" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cartelera" EntityType="Self.Cartelera" />
+    <EntitySet Name="Cuadre" EntityType="Self.Cuadre" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+    <EntitySet Name="Empleado_" EntityType="Self.Empleado_" />
+    <EntitySet Name="Factura" EntityType="Self.Factura" />
+    <EntitySet Name="Facturacion" EntityType="Self.Facturacion" />
+    <EntitySet Name="Funcion" EntityType="Self.Funcion" />
+    <EntitySet Name="Horario_empleado" EntityType="Self.Horario_empleado" />
+    <EntitySet Name="Nomina_rrhh" EntityType="Self.Nomina_rrhh" />
+    <EntitySet Name="Sexo" EntityType="Self.Sexo" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <FunctionImport Name="ERegCartelera">
+      <Parameter Name="Fechareg" Mode="In" Type="DateTime" />
+      <Parameter Name="Id_funcion" Mode="In" Type="Int32" />
+      <Parameter Name="Id_sala" Mode="In" Type="Int32" />
+      <Parameter Name="descripcion_pelicula" Mode="In" Type="String" />
+      <Parameter Name="FechaDispIni" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaDispFin" Mode="In" Type="DateTime" />
+      <Parameter Name="precio_unit" Mode="In" Type="Double" />
+      <Parameter Name="NoReg_Cartelera" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="IRegCartelera">
+      <Parameter Name="Fechareg" Mode="In" Type="DateTime" />
+      <Parameter Name="Id_funcion" Mode="In" Type="Int32" />
+      <Parameter Name="Id_sala" Mode="In" Type="Int32" />
+      <Parameter Name="descripcion_pelicula" Mode="In" Type="String" />
+      <Parameter Name="FechaDispIni" Mode="In" Type="DateTime" />
+      <Parameter Name="FechaDispFin" Mode="In" Type="DateTime" />
+      <Parameter Name="precio_unit" Mode="In" Type="Double" />
+      <Parameter Name="NoReg_Cartelera" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RegFact">
+      <Parameter Name="Nom_pelicula" Mode="In" Type="String" />
+      <Parameter Name="Cantidad_taq" Mode="In" Type="Int32" />
+      <Parameter Name="sala" Mode="In" Type="String" />
+      <Parameter Name="precio_unitario" Mode="In" Type="Double" />
+      <Parameter Name="total" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="ShowCartelera" ReturnType="Collection(CineMatinee001Model.ShowCartelera_Result)" />
+    <FunctionImport Name="ShowCarteleraxFun" ReturnType="Collection(CineMatinee001Model.ShowCarteleraxFun_Result)" />
+    <FunctionImport Name="Showempleado" ReturnType="Collection(CineMatinee001Model.Showempleado_Result)" />
+    <FunctionImport Name="ShoweNom" ReturnType="Collection(CineMatinee001Model.ShoweNom_Result)" />
+    <FunctionImport Name="ShowFun" ReturnType="Collection(CineMatinee001Model.ShowFun_Result)" />
+    <FunctionImport Name="ShowSala" ReturnType="Collection(CineMatinee001Model.ShowSala_Result)" />
+    <FunctionImport Name="ShowTickets" ReturnType="Collection(CineMatinee001Model.ShowTickets_Result)" />
+  </EntityContainer>
+  <ComplexType Name="ShowCartelera_Result">
+    <Property Type="Int32" Name="NoReg_Cartelera" Nullable="false" />
+    <Property Type="DateTime" Name="Fechareg" Nullable="true" />
+    <Property Type="Int32" Name="Id_funcion" Nullable="true" />
+    <Property Type="Int32" Name="Id_sala" Nullable="true" />
+    <Property Type="String" Name="descripcion_pelicula" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="FechaDispIni" Nullable="true" />
+    <Property Type="DateTime" Name="FechaDispFin" Nullable="true" />
+    <Property Type="Double" Name="precio_unit" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ShowCarteleraxFun_Result">
+    <Property Type="Int32" Name="Numero" Nullable="false" />
+    <Property Type="DateTime" Name="FechaReg" Nullable="true" />
+    <Property Type="String" Name="Funcion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Sala" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Pelicula" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="Desde" Nullable="true" />
+    <Property Type="DateTime" Name="Hasta" Nullable="true" />
+    <Property Type="Double" Name="PrecioUnitario" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Showempleado_Result">
+    <Property Type="Int32" Name="Id_emp" Nullable="false" />
+    <Property Type="String" Name="Nombre_emp" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Apellidos_emp" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="fecha_nac" Nullable="true" />
+    <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="9" />
+  </ComplexType>
+  <ComplexType Name="ShoweNom_Result">
+    <Property Type="Int32" Name="Id_nomina" Nullable="false" />
+    <Property Type="DateTime" Name="fecha_nomina" Nullable="true" />
+    <Property Type="String" Name="Nombre_emp" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Nombre_apellidos" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="sueldo_bruto" Nullable="true" />
+    <Property Type="Double" Name="afp" Nullable="true" />
+    <Property Type="Double" Name="ars" Nullable="true" />
+    <Property Type="Double" Name="Impuesto" Nullable="true" />
+    <Property Type="Double" Name="total_des" Nullable="true" />
+    <Property Type="Double" Name="sueldo_neto" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ShowFun_Result">
+    <Property Type="Int32" Name="Id_funcion" Nullable="false" />
+    <Property Type="String" Name="descrip_fun" Nullable="true" MaxLength="50" />
+    <Property Type="Time" Name="HoraIni" Nullable="true" />
+    <Property Type="Time" Name="HoraFin" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ShowSala_Result">
+    <Property Type="Int32" Name="Id_sala" Nullable="true" />
+    <Property Type="String" Name="Descripcion_sala" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="cap_max" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ShowTickets_Result">
+    <Property Type="Int32" Name="No_fact" Nullable="false" />
+    <Property Type="String" Name="Nom_pelicula" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Cantidad_taq" Nullable="true" />
+    <Property Type="String" Name="sala" Nullable="true" MaxLength="5" />
+    <Property Type="Double" Name="precio_unitario" Nullable="true" />
+    <Property Type="Double" Name="total" Nullable="true" />
+  </ComplexType>
+</Schema>

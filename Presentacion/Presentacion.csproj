@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CA07394-CCCF-4AFD-B1C2-E85E09DD0412}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Presentacion</RootNamespace>
+    <AssemblyName>Presentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Design.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.1\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adm_op.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Adm_op.Designer.cs">
+      <DependentUpon>Adm_op.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cartelera.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CineMatinee.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CineMatinee.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CineMatinee.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CineMatinee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CineMatinee.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CineMatinee001DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CineMatinee001DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="control_rrhh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control_rrhh.Designer.cs">
+      <DependentUpon>control_rrhh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuadre.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CuadreFact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CuadreFact.Designer.cs">
+      <DependentUpon>CuadreFact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado_.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Factura.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Funcion.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Horario_empleado.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina_rrhh.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rrhh_nomina.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="rrhh_nomina.Designer.cs">
+      <DependentUpon>rrhh_nomina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sexo.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShowCarteleraxFun_Result.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShowCartelera_Result.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Showempleado_Result.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoweNom_Result.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShowFun_Result.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShowSala_Result.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShowTickets_Result.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Taquilleria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Taquilleria.Designer.cs">
+      <DependentUpon>Taquilleria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>CineMatinee.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Adm_op.resx">
+      <DependentUpon>Adm_op.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="control_rrhh.resx">
+      <DependentUpon>control_rrhh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CuadreFact.resx">
+      <DependentUpon>CuadreFact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="rrhh_nomina.resx">
+      <DependentUpon>rrhh_nomina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Taquilleria.resx">
+      <DependentUpon>Taquilleria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="CineMatinee.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CineMatinee.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CineMatinee.edmx.diagram">
+      <DependentUpon>CineMatinee.edmx</DependentUpon>
+    </None>
+    <None Include="CineMatinee001DataSet.xsc">
+      <DependentUpon>CineMatinee001DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CineMatinee001DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CineMatinee001DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CineMatinee001DataSet.xss">
+      <DependentUpon>CineMatinee001DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receipt_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\popcorn_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrator_male_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conference_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conference_filled_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movie_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_male_circle_filled_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down_squared_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiply_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Comun\Comun.csproj">
+      <Project>{a609c163-7562-492f-9a55-6c630fae80c7}</Project>
+      <Name>Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{dec0a420-ea3c-4c63-abbb-028989ec2f29}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{8871f8e9-51d5-4d4e-a043-57c8013cfdde}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_32px.png" />
+    <None Include="Resources\save_26px.png" />
+    <None Include="Resources\search_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x64\msvcr100.dll">
+      <Link>SqlServerTypes\x64\msvcr100.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x64\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x64\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\msvcr100.dll">
+      <Link>SqlServerTypes\x86\msvcr100.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x86\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CineMatinee.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CineMatinee.edmx</DependentUpon>
+      <LastGenOutput>CineMatinee.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CineMatinee.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CineMatinee.edmx</DependentUpon>
+      <LastGenOutput>CineMatinee.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

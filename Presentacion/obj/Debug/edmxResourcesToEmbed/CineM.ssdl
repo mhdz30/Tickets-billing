@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CineMatinee001Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="Cartelera">
+    <Key>
+      <PropertyRef Name="NoReg_Cartelera" />
+    </Key>
+    <Property Name="NoReg_Cartelera" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fechareg" Type="date" />
+    <Property Name="Id_funcion" Type="int" />
+    <Property Name="Id_sala" Type="int" />
+    <Property Name="descripcion_pelicula" Type="nvarchar" MaxLength="100" />
+    <Property Name="FechaDispIni" Type="date" />
+    <Property Name="FechaDispFin" Type="date" />
+    <Property Name="precio_unit" Type="float" />
+  </EntityType>
+  <EntityType Name="Cuadre">
+    <Key>
+      <PropertyRef Name="Id_cuadre" />
+    </Key>
+    <Property Name="Id_cuadre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fehca_cuadre" Type="date" />
+    <Property Name="user" Type="nvarchar" MaxLength="1" />
+    <Property Name="Id_factura" Type="int" Nullable="false" />
+    <Property Name="Total" Type="float" />
+    <Property Name="Total_general" Type="float" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="Id_empleado" />
+    </Key>
+    <Property Name="Id_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre_emp" Type="nvarchar" MaxLength="50" />
+    <Property Name="Apellido" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id_sexo" Type="int" Nullable="false" />
+    <Property Name="fecha_nac" Type="date" />
+    <Property Name="Id_horario" Type="int" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="date" />
+    <Property Name="fecha_salida" Type="date" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="No_fact" />
+    </Key>
+    <Property Name="No_fact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_pelicula" Type="nvarchar" MaxLength="100" />
+    <Property Name="Cantidad_taq" Type="int" />
+    <Property Name="sala" Type="nvarchar" MaxLength="5" />
+    <Property Name="precio_unitario" Type="float" />
+    <Property Name="total" Type="float" />
+  </EntityType>
+  <EntityType Name="Facturacion">
+    <Key>
+      <PropertyRef Name="No_factura" />
+    </Key>
+    <Property Name="No_factura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha_fact" Type="date" />
+    <Property Name="fecha_valida" Type="date" />
+    <Property Name="Fun" Type="nvarchar" MaxLength="50" />
+    <Property Name="Descripcion_pelicula" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sala" Type="nvarchar" MaxLength="2" />
+    <Property Name="precio_unit" Type="float" />
+    <Property Name="cantidad_taq" Type="int" />
+    <Property Name="total" Type="float" />
+    <Property Name="cant_ac" Type="int" />
+  </EntityType>
+  <EntityType Name="Funcion">
+    <Key>
+      <PropertyRef Name="Id_funcion" />
+    </Key>
+    <Property Name="Id_funcion" Type="int" Nullable="false" />
+    <Property Name="descrip_fun" Type="nvarchar" MaxLength="50" />
+    <Property Name="HoraIni" Type="time" Precision="7" />
+    <Property Name="HoraFin" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="Horario_empleado">
+    <Key>
+      <PropertyRef Name="Id_horario" />
+    </Key>
+    <Property Name="Id_horario" Type="int" Nullable="false" />
+    <Property Name="HorarioIni" Type="time" Precision="7" />
+    <Property Name="Horariofin" Type="time" Precision="7" />
+    <Property Name="Descripcion_horario" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'CineMatinee001.dbo.Sala' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Sala">
+          <Property Name="Id_sala" Type="int" />
+          <Property Name="Descripcion_sala" Type="nvarchar" MaxLength="100" />
+          <Property Name="cap_max" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Sexo">
+    <Key>
+      <PropertyRef Name="Id_sexo" />
+    </Key>
+    <Property Name="Id_sexo" Type="int" Nullable="false" />
+    <Property Name="descrip_sexo" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id_usuario" />
+    </Key>
+    <Property Name="Id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario_idnom" Type="nvarchar" MaxLength="15" />
+    <Property Name="clave" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tipo_usuario" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id_empleado" Type="int" Nullable="false" />
+  </EntityType>
+  <Function Name="ERegCartelera" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fechareg" Type="date" Mode="In" />
+    <Parameter Name="Id_funcion" Type="int" Mode="In" />
+    <Parameter Name="Id_sala" Type="int" Mode="In" />
+    <Parameter Name="descripcion_pelicula" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaDispIni" Type="date" Mode="In" />
+    <Parameter Name="FechaDispFin" Type="date" Mode="In" />
+    <Parameter Name="precio_unit" Type="float" Mode="In" />
+    <Parameter Name="NoReg_Cartelera" Type="int" Mode="In" />
+  </Function>
+  <Function Name="IRegCartelera" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fechareg" Type="date" Mode="In" />
+    <Parameter Name="Id_funcion" Type="int" Mode="In" />
+    <Parameter Name="Id_sala" Type="int" Mode="In" />
+    <Parameter Name="descripcion_pelicula" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaDispIni" Type="date" Mode="In" />
+    <Parameter Name="FechaDispFin" Type="date" Mode="In" />
+    <Parameter Name="precio_unit" Type="float" Mode="In" />
+    <Parameter Name="NoReg_Cartelera" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RegFact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nom_pelicula" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cantidad_taq" Type="int" Mode="In" />
+    <Parameter Name="sala" Type="nvarchar" Mode="In" />
+    <Parameter Name="precio_unitario" Type="float" Mode="In" />
+    <Parameter Name="total" Type="float" Mode="In" />
+  </Function>
+  <Function Name="ShowCartelera" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ShowCarteleraxFun" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ShowFun" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ShowSala" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ShowTickets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="CineMatinee001ModelStoreContainer">
+    <EntitySet Name="Cartelera" EntityType="Self.Cartelera" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cuadre" EntityType="Self.Cuadre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Facturacion" EntityType="Self.Facturacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Funcion" EntityType="Self.Funcion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Horario_empleado" EntityType="Self.Horario_empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sexo" EntityType="Self.Sexo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
